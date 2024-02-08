@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "mvs-movies",
+    "password": "mvs-movies",
+    "database": "mvs-movies",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "mvs-movies",
+    "password": "mvs-movies",
+    "database": "mvs-movies",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "mvs-movies",
+    "password": "mvs-movies",
+    "database": "mvs-movies",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

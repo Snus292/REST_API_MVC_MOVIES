@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Inception",
+    "releaseYear": 2010,
+    "plot": "A thief who enters the dreams of others to steal their secrets.",
+    "genres": ["Action", "Sci-Fi"],
+    "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt"]
+  },
+  {
+    "title": "The Shawshank Redemption",
+    "releaseYear": 1994,
+    "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "genres": ["Drama"],
+    "actors": ["Tim Robbins", "Morgan Freeman"]
+  },
+  {
+    "title": "Pulp Fiction",
+    "releaseYear": 1994,
+    "plot": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "genres": ["Crime", "Drama"],
+    "actors": ["John Travolta", "Samuel L. Jackson"]
+  },
+  {
+    "title": "The Dark Knight",
+    "releaseYear": 2008,
+    "plot": "When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+    "genres": ["Action", "Crime", "Drama"],
+    "actors": ["Christian Bale", "Heath Ledger"]
+  }
+]
