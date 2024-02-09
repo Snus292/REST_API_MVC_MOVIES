@@ -22,5 +22,13 @@ const getMoviesByActor=async(req,res)=>{
         const movies =await ActorService.getMoviesByActor(actor);
         //отправка ответа с массивом фильмаов в формате JSON
         res.json(movies);
+    }catch(error){
+        // в случае ошибки идет вывод ее в консоль и отправка статуса 500с смс
+        console.status(500).send("Internal Server Error");
     }
-}
+};
+
+module.exports= {
+    getAllActors,
+    getMoviesByActor,
+};
