@@ -17,8 +17,10 @@ const getAllActors = async (req,res)=>{
 const getMoviesByActor=async(req,res)=>{
     //извлекаем имя актера из параметров запроса
     const {actor}= req.params;
-    try{
+    try{ //если возникнет ошибка, она обработается в блоке catch
+
         //вызов сервиса для получения фильмов с участие определенноого актера
+// await- метод для ожидания выполнения асинхронной операции
         const movies =await ActorService.getMoviesByActor(actor);
         //отправка ответа с массивом фильмаов в формате JSON
         res.json(movies);

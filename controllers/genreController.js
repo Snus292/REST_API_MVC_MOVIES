@@ -19,8 +19,10 @@ const getAllGenres =async (req,res)=>{
 const getMoviesByGenre =async (req,res)=>{
     //извлечение жанра из параметровзапроса
     const {genre}= req.params;
-    try{
+    try{//если возникнет ошибка, она обработается в блоке catch
+
         //вызов сервис для получения фильмов по определенному жанру
+// await- метод для ожидания выполнения асинхронной операции       
         const movies=await GenreServise.getMoviesByGenre(genre);
         // отправляем ответ с массивом фильмов в формате JSON
         res.json(movies);

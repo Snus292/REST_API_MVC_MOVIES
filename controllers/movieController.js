@@ -65,8 +65,10 @@ const getMoviesByActor = async (req, res) => {
 
 // Получение списка жанров с количеством фильмов в каждом
 const getGenresWithMovieCount = async (req, res) => {
-  try {
+  try {//если возникнет ошибка, она обработается в блоке catch
+    
     // Вызываем сервис для получения списка жанров с количеством фильмов
+// await- метод для ожидания выполнения асинхронной операции
     const genres = await MovieService.getGenresWithMovieCount();
     // Отправляем ответ с результатом в формате JSON
     res.json(genres);
