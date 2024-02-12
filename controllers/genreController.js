@@ -8,7 +8,7 @@ const getAllGenres =async (req,res)=>{
         //отправка ответа с массивом жанров формате JSON
         res.json(genres);
     }catch(error){
-        //вслучае ошибки идет вывод ее в консоль и отправка статуса 500 с смс
+        //в случае ошибки идет вывод ее в консоль и отправка статуса 500 с смс
         console.error(error);
         res.status(500).send("Internal Server Error");
 
