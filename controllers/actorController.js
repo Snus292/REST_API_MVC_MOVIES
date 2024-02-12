@@ -29,6 +29,7 @@ const getMoviesByActor=async(req,res)=>{
         console.status(500).send("Internal Server Error");
     }
 };
+// await- метод для ожидания выполнения асинхронной операции
 
 module.exports= {
     getAllActors,
