@@ -39,5 +39,11 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+// Включение подробного логирования запросов к базе данных
+sequelize.sync({ logging: console.log }).then(() => {
+  console.log('Database synchronized');
+}).catch((error) => {
+  console.error('Error synchronizing database:', error);
+});
 
 module.exports = db;

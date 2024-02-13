@@ -1,13 +1,25 @@
-const {DataTypes}= require("sequelize");
-const sequelize = require("../config/db")
+'use strict';
 
-const Genre  = sequelize.define("Genre",{
-    name:{
+const { Model } = require('sequelize');
+const db = require('./index');
+module.exports = (sequelize, DataTypes) => {
+  class Genre extends Model {
+    static associate(models) {
+        Genre.belongsToMany(models.Movie, { through: 'MovieGenres' });
+    }
+  }
+  Genre.init(
+    {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
     },
-},{
-    timestamps: false,
-});
-
-module.exports = Genre;
+    {
+      sequelize,
+      modelName: 'Genre',
+      timestamps: false,
+    }
+  );
+  return Genre;
+};

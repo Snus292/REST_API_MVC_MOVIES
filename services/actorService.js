@@ -1,5 +1,7 @@
+const {Sequelize}= require("sequelize");
 const {Actor}= require("../models");
 const { Op } = Sequelize;
+
 
 class ActorService{
     //получение всех актеров

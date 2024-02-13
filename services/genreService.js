@@ -2,12 +2,11 @@
 // самому классу, а не экземпляру класса. Это позволяет вызывать методы 
 // напрямую от класса, без создания объекта этого класса.
 
-
+const {Sequelize}= require("sequelize");
 const {Genre} = require("../models");
 const { Op } = Sequelize;
 
 class GenreService{
-    //получение всех жанров
     static async getAllGenres(){
 // Используется метод findAll() модели Genre для получения всех жанров из базы данных
         return Genre.findAll();

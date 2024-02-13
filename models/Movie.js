@@ -1,34 +1,38 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../config/db");
-const Genre = require("./Genre");
-const Actor =require("./Actor");
+'use strict';
 
 
-const Movie = sequelize.define("Movie", {
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  releaseYear: {
-    type: DataTypes.INTEGER,
-  },
-  plot: {
-    type: DataTypes.TEXT,
-  },
-}, {
-  timestamps: false,
-});
+const { Genre } = require('./Genre');
+const { Actor } = require('./Actor');
 
-Movie.belongsToMany(Genre, { through: 'MovieGenres' });
-Genre.belongsToMany(Movie, { through: 'MovieGenres' });
-
-Movie.belongsToMany(Actor, { through: 'MovieActors' });
-Actor.belongsToMany(Movie, { through: 'MovieActors' });
-
-module.exports = Movie;
-
-
-
-
-
+const { Model } = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+    class Movie extends Model {
+        static associate(models) {
+            Movie.belongsToMany(models.Genre, { through: 'MovieGenres' });
+            Movie.belongsToMany(models.Actor, { through: 'MovieActors' });
+        }
+    }
+    Movie.init(
+        {
+          title: {
+            type: DataTypes.STRING, // Проверьте эту строку
+            allowNull: false,
+          },
+          releaseYear: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+          },
+          plot: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+          },
+        },
+        {
+          sequelize,
+          modelName: 'Movie',
+          timestamps: false,
+        }
+    );
+    return Movie;
+};
 
