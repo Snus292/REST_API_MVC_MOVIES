@@ -1,5 +1,5 @@
 //деструктуризация объекта { MovieService } и вызов функции require который загружает модуль, расположенный по указанному пути
-const {MovieService} = require("../servises");
+const {MovieService} = require("../services");
 
 //получение всех фильмов
 const getAllMovies = async (req,res) => {

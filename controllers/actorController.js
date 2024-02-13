@@ -9,7 +9,8 @@ const getAllActors = async (req,res)=>{
         res.jso(actors);
     }catch(error){
         //в случае ошибки вывожим ее в консоль  иотправляем статус 500 с смс
-        console.error(500).send("Internal Server Error");
+        console.error(error);
+        res.status(500).send("Internal Server Error");
     }
 };
 
@@ -26,7 +27,8 @@ const getMoviesByActor=async(req,res)=>{
         res.json(movies);
     }catch(error){
         // в случае ошибки идет вывод ее в консоль и отправка статуса 500с смс
-        console.status(500).send("Internal Server Error");
+        console.error(error);
+        res.status(500).send("Internal Server Error");
     }
 };
 // await- метод для ожидания выполнения асинхронной операции
