@@ -1,3 +1,7 @@
+const movieRoutes = require('./movieRoutes');
+const genreRoutes = require('./genreRoutes'); 
+const actorRoutes = require('./actorRoutes'); 
+
 var express = require('express');
 // создание нового марштуризатора Express
 var router = express.Router();
@@ -9,18 +13,18 @@ router.get('/', function(req, res, next) {
   // В данном случае, передаем заголовок 'Your Web App'
   res.render('index', { title: 'Express' });
 });
+router.use('/movies', movieRoutes);
+router.use('/genres', genreRoutes);
+router.use('/actors', actorRoutes);
+
 
 module.exports = router;
 
 
 
 
-// const movieRoutes = require('./movieRoutes');
-// const genreRoutes = require('./genreRoutes'); 
-// const actorRoutes = require('./actorRoutes'); 
+
 
 // Использование подмаршруты для каждой модели
-// router.use('/movies', movieRoutes);
-// router.use('/genres', genreRoutes);
-// router.use('/actors', actorRoutes);
+
 
