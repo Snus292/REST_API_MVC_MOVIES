@@ -20,11 +20,3 @@ router.use('/actors', actorRoutes);
 
 module.exports = router;
 
-
-
-
-
-
-// Использование подмаршруты для каждой модели
-
-

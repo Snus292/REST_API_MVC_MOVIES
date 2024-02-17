@@ -1,11 +1,12 @@
-
-const MovieService = require('./movieService');
 const ActorService = require('./actorService');
-const GenreService = require('./genreService'); 
+const MovieService = require('./movieService');
+const GenreService = require('./genreService');
+const importData = require("./importDataService")
 
 module.exports = {
-  MovieService,
-  ActorService,
-  GenreService,
-
+    ActorService,
+    MovieService,
+    GenreService,
+    importData,
+    
 };

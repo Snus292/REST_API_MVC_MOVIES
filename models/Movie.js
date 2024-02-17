@@ -8,8 +8,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class Movie extends Model {
         static associate(models) {
-            Movie.belongsToMany(models.Genre, { through: 'MovieGenres' });
-            Movie.belongsToMany(models.Actor, { through: 'MovieActors' });
+            Movie.belongsToMany(models.Genre, { through: 'MovieGenres',timestamps: false });
+            Movie.belongsToMany(models.Actor, { through: 'MovieActors',timestamps: false });
         }
     }
     Movie.init(

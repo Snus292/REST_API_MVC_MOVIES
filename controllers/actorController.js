@@ -6,7 +6,7 @@ const getAllActors = async (req,res)=>{
         //вызов сервиса для получения всех актеров из базы данных
         const actors= await ActorService.getAllActors();
         //отправка ответа с массивом актеров в формате JSON
-        res.jso(actors);
+        res.json(actors);
     }catch(error){
         //в случае ошибки вывожим ее в консоль  иотправляем статус 500 с смс
         console.error(error);

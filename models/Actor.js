@@ -6,7 +6,7 @@ const db = require('./index');
 module.exports = (sequelize, DataTypes) => {
   class Actor extends Model {
     static associate(models) {
-        Actor.belongsToMany(models.Movie, { through: 'MovieActors' });
+        Actor.belongsToMany(models.Movie, { through: 'MovieActors',timestamps: false });
     }
   }
   Actor.init(

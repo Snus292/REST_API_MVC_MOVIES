@@ -1,7 +1,7 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs'); //модуль для работы с файловой сиситемой
+const path = require('path');//модуль для работы с путями файлов
 const Sequelize = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
